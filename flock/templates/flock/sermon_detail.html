@@ -1,0 +1,13 @@
+{% extends 'flock/base_layout.html' %}
+
+{% block content %}
+    <div class="sermon-detail">
+    <div class="sermon">
+    <img src="{{ sermon.thumb.url }}"/>
+    <h2>{{ sermon.title }}</h2>
+    <p>{{ sermon.body }}</p>
+    <p>{{ sermon.date }}</p>
+    </div>
+    </div>
+
+{% endblock %}

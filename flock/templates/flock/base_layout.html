@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    
+    <title>Little Flock Burundi</title>
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#">
+          <img src="media/logo2.png" alt="Little Flock" width="50px" height="50px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="ourPrograms.php">Our programs</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="sermons.php">Sermons</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="articles.php">Articles</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="videos.php">Videos</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="events.php">Events</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="support_us.php">Support us</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.php">Contacts</a>
+            </li>
+  
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<body>
+
+    {% block content%}
+
+    {% endblock %}
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+</body>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+  
+      <!--Grid row-->
+      <div class="row">
+  
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-12 mb-4">
+  
+          <!--Image-->
+          <div class="view overlay z-depth-1-half">
+            <img src="{% static 'flock2.jpg' %}" class="img-fluid"
+              alt="">
+            <a href="">
+              <div class="mask rgba-white-light"></div>
+            </a>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4">
+  
+          <!--Image-->
+          <div class="view overlay z-depth-1-half">
+            <img src="{% static 'flock10.jpg' %}" class="img-fluid"
+              alt="">
+            <a href="">
+              <div class="mask rgba-white-light"></div>
+            </a>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4">
+  
+          <!--Image-->
+          <div class="view overlay z-depth-1-half">
+            <img src="{% static 'flock13.jpg' %}" class="img-fluid"
+              alt="">
+            <a href="">
+              <div class="mask rgba-white-light"></div>
+            </a>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-12 mb-4">
+  
+          <!--Image-->
+          <div class="view overlay z-depth-1-half">
+            <img src="{% static 'flock11.jpg' %}" class="img-fluid"
+              alt="">
+            <a href="">
+              <div class="mask rgba-white-light"></div>
+            </a>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4">
+  
+          <!--Image-->
+          <div class="view overlay z-depth-1-half">
+            <img src="{% static 'flock12.jpg' %}" class="img-fluid"
+              alt="">
+            <a href="">
+              <div class="mask rgba-white-light"></div>
+            </a>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4">
+  
+          <!--Image-->
+          <div class="view overlay z-depth-1-half">
+            <img src="{% static 'flock8.jpg' %}" class="img-fluid"
+              alt="">
+            <a href="">
+              <div class="mask rgba-white-light"></div>
+            </a>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+      </div>
+      <!--Grid row-->
+  
+    </div>
+    <!-- Footer Elements -->
+  
+      <!-- autre Footer Elements -->
+  <div class="container">
+
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+          <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+
+        <form class="input-group">
+          <input type="text" class="form-control form-control-sm" placeholder="Your email"
+            aria-label="Your email" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
+          </div>
+        </form>
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  </div>
+  <!-- end autre Footer Elements -->
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© {% now "Y" %} Copyright :
+      <a href="https://egeratech.com/"> egeraTech</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
