@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
       <div class="container-lg">
         <a class="navbar-brand" href="#">
-          <img src="media/logo2.png" alt="Little Flock" width="50px" height="50px">
+          <img src="{% static 'logo.png' %}" alt="Little Flock" width="50px" height="50px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,35 +23,35 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'flock:home' %}">Home</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="ourPrograms.php">Our programs</a>
+              <a class="nav-link active" href="{% url 'flock:programs' %}">Our programs</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="sermons.php">Sermons</a>
+              <a class="nav-link active" href="{% url 'flock:sermons' %}">Sermons</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="articles.php">Articles</a>
+              <a class="nav-link active" href="{% url 'flock:articles' %}">Articles</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="videos.php">Videos</a>
+              <a class="nav-link active" href="{% url 'flock:videos' %}">Videos</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="events.php">Events</a>
+              <a class="nav-link active" href="{% url 'flock:events' %}">Events</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="support_us.php">Support us</a>
+              <a class="nav-link active" href="{% url 'flock:support_us' %}">Support us</a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="contact.php">Contacts</a>
+              <a class="nav-link active" href="{% url 'flock:contact' %} ">Contacts</a>
             </li>
   
           </ul>
