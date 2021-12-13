@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import Sermon
 
 def home(request):
-    #return HttpResponse('home')
-    return render(request,'flock/home.html') #this flock is namespace help to differenciate with other home.html of other app's templates : is the fold inside of templates of the app
+    sermons = Sermon.objects.all().order_by('date') #sermons variable receives data from db
+    return render(request,'flock/home.html', {'sermons':sermons}) #this flock is namespace help to differenciate with other home.html of other app's templates : is the fold inside of templates of the app #'sermons' receives sermons variable and it will be used in templates
 
 def sermon_list(request):
     sermons = Sermon.objects.all().order_by('date') #sermons variable receives data from db

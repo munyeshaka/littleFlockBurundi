@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block content %}
-{% load static %}
+
+
 <!-- font Background image -->
+<div class="container">
     <div class="text-white">
-        <img src="{% static 'font1.jpg' %}" class="container-fluid bg-dark vh-100" alt="Little Flock Burundi">
-        <div class="card-img-overlay text-center">
+        <img src="{% static 'font1.jpg' %}" class="image-wrapper" alt="Little Flock Burundi">
+        <div class="card-img-overlay bg-transparent text-center">
             <div class="col-md-3 text-center my-auto">
                 <div class="card-img-overlay card-body align-items-center d-flex justify-content-center">
 
@@ -25,6 +27,7 @@
             </div>
         </div>
     </div>
+</div>
     <!-- end font Background image -->
     
     <br>
@@ -41,7 +44,9 @@
                         - Rooted in the Word of Christ<br>
                         - Filled with the Power of the Holy Spirit <br>
                         - Ablaze with love for the Father</P>
-                    <a href="#" style="background-color:#c9ae60; color:white;" class="btn">Know more about us</a>
+                        <div class="inner">
+                            <a href="#" style="background-color:#c9ae60; color:white;" class="btn">More</a>
+                        </div>
                 </div>
                 <div class="col-md-6 ">
                     <div class="inner">
@@ -68,7 +73,9 @@
                         <h2 class="fw-bold fs-1">Our vision</h2>
                         <P>Our vision is to see strong eschatological communities of both rural and urban churches that proclaim the Kingdom that has come through death and resurrection of Jesus Christ, portray its present glory and point to its full glory that is to come.
                         </P>
-                        <a href="#" style="background-color:#c9ae60; color:white;" class="btn">Go somewhere</a>
+                        <div class="inner">
+                        <a href="#" style="background-color:#c9ae60; color:white;" class="btn">More</a>
+                        </div>
                     </div>
 
                 </div>
@@ -90,7 +97,7 @@
                             <div class="col-md-4">
                                 <br>
                                 <div class="card shadow" style="width: 20rem; ">
-                                    <div class="inner"><img class="card-img-top" width="150" height="230" src="{{ sermon.thumb.url }}"> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                                    <div class="inner"><img class="card-img-top" width="150" height="230" src="{{ sermon.photo.url }}"> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                                     
                                         <br>
                                     </div>
@@ -112,8 +119,10 @@
 
                 <br>
 
-                <div class="card-body text-center">
-                    <a href="flock/sermons/" style="background-color:#c9ae60; color:white;" class="btn">Other Sermons</a>
+                <div class="inner">
+                    <div class="card-body text-center">
+                        <a href="flock/sermons/" style="background-color:#c9ae60; color:white;" class="btn">Other Sermons</a>
+                    </div>
                 </div>
                 <!-- =================End of Recent Sermons================= -->
 
