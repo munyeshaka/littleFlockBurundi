@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'flock',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ VENV_PATH = os.path.dirname(BASE_DIR)
 
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 
-MEDIA_URL = '/media/' #fold ijamwo ama uploaded medias
+MEDIA_URL = 'media/' #fold ijamwo ama uploaded medias
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     
 # Default primary key field type

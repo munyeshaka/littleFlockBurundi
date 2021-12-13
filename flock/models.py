@@ -15,7 +15,7 @@ class Sermon(models.Model):
     slug = models.SlugField(max_length=150, unique=True)
     date = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
-    photo = models.ImageField(upload_to=settings.MEDIA_ROOT, default='default.png', blank=True)
+    photo = models.ImageField(upload_to='%Y/%m/%d/', default='default.png', blank=True)
     # title slug date body thumb
 
     def __str__(self):
@@ -32,8 +32,10 @@ class Sermon(models.Model):
     def snippet(self):
         return self.body[:200] +'...'
 
-    #display image in admin
-    def image_tag(self):
-        # used in the admin site model as a "thumbnail"
-        return mark_safe('<img src="{}" width="150" height="150" />'.format(self.photo) )
-    image_tag.short_description = 'Image'
+
+    
+    # #display image in admin
+    # def image_tag(self):
+    #     # used in the admin site model as a "thumbnail"
+    #     return mark_safe('<img src="{}" width="150" height="150" />'.format(self.photo) )
+    # image_tag.short_description = 'Image'

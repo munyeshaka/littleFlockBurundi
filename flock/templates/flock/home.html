@@ -97,16 +97,18 @@
                             <div class="col-md-4">
                                 <br>
                                 <div class="card shadow" style="width: 20rem; ">
-                                    <div class="inner"><img class="card-img-top" width="150" height="230" src="{{ sermon.photo.url }}"> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                                    <div class="inner">
+                                        <img class="card-img-top" width="150" height="230" src="{{ sermon.photo.url }}"> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                                     
                                         <br>
                                     </div>
                                     <div class="card-body text-center">
+
                                         <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                                         <p class="card-text"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{ sermon.snippet}}</a></p> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                                         <h6 class="card-text"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{ sermon.date}}</a></h6>
-
-                                        <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a>
+{% comment %} 
+                                        <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
                                     </div>
 
                                 </div>
