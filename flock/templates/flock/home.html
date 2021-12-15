@@ -8,7 +8,7 @@
 <div class="container">
     <div class="text-white">
         <img src="{% static 'font1.jpg' %}" class="image-wrapper" alt="Little Flock Burundi">
-        <div class="card-img-overlay bg-transparent text-center">
+        <div class="card-img-overlay shadow bg-transparent text-center">
             <div class="col-md-3 text-center my-auto">
                 <div class="card-img-overlay card-body align-items-center d-flex justify-content-center">
 
@@ -30,12 +30,10 @@
 </div>
     <!-- end font Background image -->
     
-    <br>
-
     <!-- =============ABOUT US===============-->
     <div class="container marketing">
         <div class="container">
-            <div class="row m-6 justify-content-center">
+            <div class="row shadow m-6 justify-content-center">
                 <div class="col-md-6 p-3">
                     <h2 class="fw-bold fs-1">About us</h2>
                     <P>We are a covenanted spiritual family that desires and pursues a Trinitarian fullness , for a lasting impact to the glory of God, our joy in Jesus Christ.
@@ -44,9 +42,9 @@
                         - Rooted in the Word of Christ<br>
                         - Filled with the Power of the Holy Spirit <br>
                         - Ablaze with love for the Father</P>
-                        <div class="inner">
+                        {% comment %} <div class="inner">
                             <a href="#" style="background-color:#c9ae60; color:white;" class="btn">More</a>
-                        </div>
+                        </div> {% endcomment %}
                 </div>
                 <div class="col-md-6 ">
                     <div class="inner">
@@ -58,12 +56,10 @@
 
         <!-- ===============End About Us=========-->
 
-        <br>
-
         <!-- =============Vision ===============-->
         <div class="container marketing">
             <div class="container">
-                <div class="row m-6 justify-content-center">
+                <div class="row shadow m-6 justify-content-center">
                     <div class="col-md-6 ">
                         <div class="inner">
                             <img src="{% static 'flock21a.jpg' %}" class="w-100" alt="">
@@ -73,9 +69,9 @@
                         <h2 class="fw-bold fs-1">Our vision</h2>
                         <P>Our vision is to see strong eschatological communities of both rural and urban churches that proclaim the Kingdom that has come through death and resurrection of Jesus Christ, portray its present glory and point to its full glory that is to come.
                         </P>
-                        <div class="inner">
+                        {% comment %} <div class="inner">
                         <a href="#" style="background-color:#c9ae60; color:white;" class="btn">More</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
 
                 </div>
@@ -112,7 +108,7 @@
                                     </div>
 
                                 </div>
-
+                                <br>
                             </div>
                         
                         {% endfor%}

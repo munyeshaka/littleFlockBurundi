@@ -30,7 +30,7 @@ class Sermon(models.Model):
         super(Sermon, self).save()
 
     def snippet(self):
-        return self.body[:200] +'...'
+        return self.body[:100] +'...'
 
 
     
