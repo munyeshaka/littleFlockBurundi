@@ -39,3 +39,49 @@ class Sermon(models.Model):
     #     # used in the admin site model as a "thumbnail"
     #     return mark_safe('<img src="{}" width="150" height="150" />'.format(self.photo) )
     # image_tag.short_description = 'Image'
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=101)
+    slug = models.SlugField(max_length=150, unique=True)
+    date = models.DateTimeField(auto_now_add=True)
+    body = models.TextField()
+    photo = models.ImageField(upload_to='%Y/%m/%d/', default='default.png', blank=True)
+    # title slug date body thumb
+
+    def __str__(self):
+        return self.title
+    
+    def save(self): # for auto-slug __   date and title
+        super(Article, self).save()
+        date = datetime.datetime.now()
+        self.slug = '%i-%i-%i-%s-%s-%s-%s' % (
+            date.year, date.month, date.day, date.hour, date.minute, date.second, slugify(self.title)
+        )
+        super(Article, self).save()
+
+    def snippet(self):
+        return self.body[:100] +'...'
+
+class Video(models.Model):
+    youtube_link = models.CharField(max_length=101)
+    slug = models.SlugField(max_length=150, unique=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.youtube_link
+    
+    def save(self): # for auto-slug __   date and title
+        super(Video, self).save()
+        date = datetime.datetime.now()
+        self.slug = '%i-%i-%i-%s-%s-%s-%s' % (
+            date.year, date.month, date.day, date.hour, date.minute, date.second, slugify(self.youtube_link)
+        )
+        super(Video, self).save()
+
+    def snippet(self):
+        return self.youtube_link[:11]
+
+
+
+

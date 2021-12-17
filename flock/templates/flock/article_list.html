@@ -1,0 +1,38 @@
+{% extends 'flock/base_layout.html' %}
+
+{% block content %}
+<div class="container marketing">
+<div class="container">
+    <br>
+    <br>
+    <div class="row justify-content-center">
+      <h6 style="color:#c9ae60;" class="text-center">Articles</h6>
+      <h1 class="text-center">All Articles</h1>
+      
+        {% for article in articles %}  <!--articles is variable of dictionnary in views that recieved data from variable and from db-->
+
+            <div class="col-md-4">
+                <br>
+                <div class="card shadow" style="width: 20rem; ">
+                    <div class="inner"><img class="card-img-top" width="150" height="230" src="{{ article.photo.url }}">
+                    
+                        <br>
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><a href="{% url 'flock:article_detail' slug=article.slug %}">{{article.title}}</a></h4> <!--article: namespace for templates of app, article_article_detail is name in views of slug url-->
+                        <p class="card-text">{{ article.snippet}}</a></p>
+                        <h6 class="card-text">{{ article.date}}</a></h6> <!--article: namespace for templates of app, article_article_detail is name in views of slug url-->
+{% comment %} 
+                        <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'article:article_detail' slug=article.slug %}">Read More...</a> {% endcomment %}
+                    </div>
+
+                </div>
+                <br>
+            </div>
+            
+        {% endfor %}
+        
+    </div>
+</div>
+</div>
+{% endblock %}

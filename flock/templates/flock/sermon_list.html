@@ -1,8 +1,10 @@
 {% extends 'flock/base_layout.html' %}
 
 {% block content %}
-
+<div class="container marketing">
 <div class="container">
+    <br>
+    <br>
     <div class="row justify-content-center">
       <h6 style="color:#c9ae60;" class="text-center">Sermons</h6>
       <h1 class="text-center">All Sermons</h1>
@@ -17,9 +19,9 @@
                         <br>
                     </div>
                     <div class="card-body text-center">
-                        <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
-                        <p class="card-text"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{ sermon.snippet}}</a></p>
-                        <h6 class="card-text"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{ sermon.date}}</a></h6> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
+                        <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</h4> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
+                        <p class="card-text">{{ sermon.snippet}}</a></p>
+                        <h6 class="card-text">{{ sermon.date}}</h6> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
 {% comment %} 
                         <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
                     </div>
@@ -31,6 +33,8 @@
         {% endfor %}
         
     </div>
+</div>
+
 </div>
 
 {% endblock %}

@@ -2,28 +2,27 @@
 {% load static %}
 
 {% block content %}
-
+<div class="container marketing">
 
 <!-- font Background image -->
-<div class="container">
-    <div class="text-white">
-        <img src="{% static 'font1.jpg' %}" class="image-wrapper" alt="Little Flock Burundi">
-        <div class="card-img-overlay shadow bg-transparent text-center">
-            <div class="col-md-3 text-center my-auto">
-                <div class="card-img-overlay card-body align-items-center d-flex justify-content-center">
 
-                    <div class="inner">
-                        <div class="card-body" id="zoomText">
-                            <h1 class="card-title" data-mdb-animation="zoom-in">Little Flock Burundi</h1>
-                            <br>
-                            <h4 class="card-text">Proclaim the Kingdom that has come through death and resurrection of Jesus Christ,</h4>
-                            <h4 class="card-text">portray its present glory and pointto its full glory that is to come.</h4>
-                            <br>
-                            <a href="{% url 'flock:sermons' %}" style="background-color:#c9ae60; color:white;" class="btn">Go to sermons</a> <!--to link/href a page in django {% url 'flock:sermons' %}-->
-                        </div>
+<div class="text-white">
+    <img src="{% static 'font1.jpg' %}" class="container-fluid vh-100" alt="Little Flock Burundi">
+    <div class="card-img-overlay shadow text-center">
+        <div class="col-md-3 text-center my-auto">
+            <div class="card-img-overlay card-body align-items-center d-flex justify-content-center">
+
+                <div class="inner">
+                    <div class="card-body" id="zoomText">
+                        <h1 class="card-title" data-mdb-animation="zoom-in">Little Flock Burundi</h1>
+                        <br>
+                        <h4 class="card-text">Proclaim the Kingdom that has come through death and resurrection of Jesus Christ,</h4>
+                        <h4 class="card-text">portray its present glory and pointto its full glory that is to come.</h4>
+                        <br>
+                        <a href="{% url 'flock:sermons' %}" style="background-color:#c9ae60; color:white;" class="btn">Go to sermons</a>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
@@ -31,98 +30,170 @@
     <!-- end font Background image -->
     
     <!-- =============ABOUT US===============-->
-    <div class="container marketing">
-        <div class="container">
-            <div class="row shadow m-6 justify-content-center">
-                <div class="col-md-6 p-3">
-                    <h2 class="fw-bold fs-1">About us</h2>
-                    <P>We are a covenanted spiritual family that desires and pursues a Trinitarian fullness , for a lasting impact to the glory of God, our joy in Jesus Christ.
+{% comment %} <div class="container marketing"> {% endcomment %}
+    <div class="container">
+        <div class="row shadow m-6 justify-content-center">
+            <div class="col-md-6 p-3">
+                <h2 class="fw-bold fs-1">About us</h2>
+                <P>We are a covenanted spiritual family that desires and pursues a Trinitarian fullness , for a lasting impact to the glory of God, our joy in Jesus Christ.
 
-                        Trinitarian fullness: <br>
-                        - Rooted in the Word of Christ<br>
-                        - Filled with the Power of the Holy Spirit <br>
-                        - Ablaze with love for the Father</P>
-                        {% comment %} <div class="inner">
-                            <a href="#" style="background-color:#c9ae60; color:white;" class="btn">More</a>
-                        </div> {% endcomment %}
-                </div>
-                <div class="col-md-6 ">
+                    Trinitarian fullness: <br>
+                    - Rooted in the Word of Christ<br>
+                    - Filled with the Power of the Holy Spirit <br>
+                    - Ablaze with love for the Father</P>
                     <div class="inner">
-                        <img src="{% static 'aboutus.jpg' %}" class="w-100" alt="">
+                        <a href="{% url 'flock:programs' %}" style="background-color:#c9ae60; color:white;" class="btn">Our Programs</a>
                     </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="inner">
+                    <img src="{% static 'aboutus.jpg' %}" class="w-100" alt="">
                 </div>
             </div>
         </div>
+   
 
         <!-- ===============End About Us=========-->
 
         <!-- =============Vision ===============-->
-        <div class="container marketing">
-            <div class="container">
-                <div class="row shadow m-6 justify-content-center">
-                    <div class="col-md-6 ">
-                        <div class="inner">
-                            <img src="{% static 'flock21a.jpg' %}" class="w-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 p-3">
-                        <h2 class="fw-bold fs-1">Our vision</h2>
-                        <P>Our vision is to see strong eschatological communities of both rural and urban churches that proclaim the Kingdom that has come through death and resurrection of Jesus Christ, portray its present glory and point to its full glory that is to come.
-                        </P>
-                        {% comment %} <div class="inner">
-                        <a href="#" style="background-color:#c9ae60; color:white;" class="btn">More</a>
-                        </div> {% endcomment %}
-                    </div>
-
-                </div>
+<div class="container">
+    <div class="row shadow m-6 justify-content-center">
+        <div class="col-md-6 ">
+            <div class="inner">
+                <img src="{% static 'flock21a.jpg' %}" class="w-100" alt="">
             </div>
+        </div>
+        <div class="col-md-6 p-3">
+            <h2 class="fw-bold fs-1">Our vision</h2>
+            <P>Our vision is to see strong eschatological communities of both rural and urban churches that proclaim the Kingdom that has come through death and resurrection of Jesus Christ, portray its present glory and point to its full glory that is to come.
+            </P>
+            <div class="inner">
+            <a href="{% url 'flock:support_us' %}" style="background-color:#c9ae60; color:white;" class="btn">Support us</a>
+            </div>
+        </div>
+
+    </div>
+
 
             <!-- =============== yari Our Vision=========-->
 
             <!-- =================Recent Sermons================= -->
 
-            <div class="container marketing">
-               
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <h6 style="color:#c9ae60;" class="text-center">Sermons</h6>
-                        <h1 class="text-center">Recent Sermons</h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <h6 style="color:#c9ae60;" class="text-center">Sermons</h6>
+            <h1 class="text-center">Recent Sermons</h1>
+            
+            {% for sermon in sermons %}  <!--sermons is variable of dictionnary in views that recieved data from variable and from db-->
+                <div class="col-md-4">
+                    <br>
+                    <div class="card shadow" style="width: 20rem; ">
+                        <div class="inner">
+                            <img class="card-img-top" width="150" height="230" src="{{ sermon.photo.url }}"> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                         
-                        {% for sermon in sermons %}  <!--sermons is variable of dictionnary in views that recieved data from variable and from db-->
+                            <br>
+                        </div>
+                        <div class="card-body text-center">
 
-                            <div class="col-md-4">
-                                <br>
-                                <div class="card shadow" style="width: 20rem; ">
-                                    <div class="inner">
-                                        <img class="card-img-top" width="150" height="230" src="{{ sermon.photo.url }}"> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
-                                    
-                                        <br>
-                                    </div>
-                                    <div class="card-body text-center">
+                            <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                            <p class="card-text">{{ sermon.snippet}}</p> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                            <h6 class="card-text">{{ sermon.date}}</h6>
+    {% comment %} 
+                            <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
+                        </div>
 
-                                        <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
-                                        <p class="card-text"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{ sermon.snippet}}</a></p> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
-                                        <h6 class="card-text"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{ sermon.date}}</a></h6>
-{% comment %} 
-                                        <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
-                                    </div>
-
-                                </div>
-                                <br>
-                            </div>
-                        
-                        {% endfor%}
                     </div>
+                    <br>
                 </div>
+            
+            {% endfor%}
+        </div>
+    </div>
 
-                <br>
+    <br>
 
-                <div class="inner">
-                    <div class="card-body text-center">
-                        <a href="flock/sermons/" style="background-color:#c9ae60; color:white;" class="btn">Other Sermons</a>
-                    </div>
-                </div>
+    <div class="inner">
+        <div class="card-body text-center">
+            <a href="{% url 'flock:sermons' %}" style="background-color:#c9ae60; color:white;" class="btn">Other Sermons</a>
+        </div>
+    </div>
+
                 <!-- =================End of Recent Sermons================= -->
+
+              
+                            <!-- =================Recent Articles================= -->
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <h6 style="color:#c9ae60;" class="text-center">Articles</h6>
+            <h1 class="text-center">Recent Articles</h1>
+            
+            {% for article in articles %}  <!--articles is variable of dictionnary in views that recieved data from variable and from db-->
+                <div class="col-md-4">
+                    <br>
+                    <div class="card shadow" style="width: 20rem; ">
+                        <div class="inner">
+                            <img class="card-img-top" width="150" height="230" src="{{ article.photo.url }}"> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
+                        
+                            <br>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h4 class="card-title"><a href="{% url 'flock:article_detail' slug=article.slug %}">{{article.title}}</a></h4> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
+                            <p class="card-text">{{ article.snippet}}</p> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
+                            <h6 class="card-text">{{ article.date}}</h6>
+{% comment %} 
+                            <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:article_detail' slug=article.slug %}">Read More...</a> {% endcomment %}
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+            
+            {% endfor%}
+        </div>
+    </div>
+
+
+    <br>
+
+    <div class="inner">
+        <div class="card-body text-center">
+            <a href="{% url 'flock:articles' %}" style="background-color:#c9ae60; color:white;" class="btn">Other Articles</a>
+        </div>
+    </div>
+</div>
+                <!-- =================End of Recent Articles================= -->
+
+                <!--Yutube video-->
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h6 style="color:#c9ae60;" class="text-center">Youtube videos</h6>
+                    <h1 class="text-center">Little Flock Burundi</h1>
+                    
+                    {% for video in videos %}
+
+                        <div class="col-md-4">
+                            <br>
+                                <!-- 1:1 aspect ratio  "https://www.youtube.com//v/",$url-->
+
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qN3OueBm9F4" allowfullscreen></iframe>
+                                  </div>
+                                  {{ video.snippet}}
+                        </div>
+                    {% endfor%}
+
+                </div>
+            </div>
+            <br>
+            <div class="card-body text-center">
+                <a href="https://www.youtube.com/channel/UCbjZ4CtsHcdz5E8-HatdAhg/featured" style="background-color:#c9ae60; color:white;" class="btn">Go to youtube channel</a>
+                <br>
+                <!--End youtube video-->
+
 
                 <hr class="featurette-divider">
               
@@ -131,5 +202,5 @@
 
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-
+</div>
 {% endblock %}

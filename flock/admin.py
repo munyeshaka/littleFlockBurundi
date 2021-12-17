@@ -12,5 +12,20 @@ class AdminSermon(admin.ModelAdmin):
     # fields = ('title', 'image_tag', 'body',)
     # readonly_fields = ('image_tag',)
 
-
 admin.site.register(Sermon,AdminSermon)
+
+
+class AdminArticle(admin.ModelAdmin):
+    list_display = ['title', 'photo', 'body', 'date']
+    
+    # # explicitly reference fields to be shown, note image_tag is read-only
+    # fields = ('title', 'image_tag', 'body',)
+    # readonly_fields = ('image_tag',)
+
+
+admin.site.register(Article,AdminArticle)
+
+
+class AdminVideo(admin.ModelAdmin):
+    list_display = ['youtube_link', 'date']
+admin.site.register(Video,AdminVideo)

@@ -14,10 +14,8 @@ urlpatterns = [
     re_path(r'sermons/', views.sermon_list, name='sermons'),
     re_path(r'^(?P<slug>[\w-]+)/$', views.sermon_detail, name='sermon_detail'),
 
-    re_path(r'articles/', views.sermon_list, name='articles'),
-    re_path(r'^(?P<slug>[\w-]+)/$', views.sermon_detail, name='sermon_detail'),
-
-    re_path(r'videos/', views.sermon_list, name='videos'),
+    re_path(r'flock/articles/', views.article_list, name='articles'),
+    re_path(r'flock/(?P<slug>[\w-]+)/$', views.article_detail, name='article_detail'),
 
     re_path(r'events/', views.sermon_list, name='events'),
     
