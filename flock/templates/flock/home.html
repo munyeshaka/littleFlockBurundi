@@ -42,7 +42,7 @@
                     - Filled with the Power of the Holy Spirit <br>
                     - Ablaze with love for the Father</P>
                     <div class="inner">
-                        <a href="{% url 'flock:programs' %}" style="background-color:#c9ae60; color:white;" class="btn">Our Programs</a>
+                        <a href="{% url 'flock:contacts' %}" style="background-color:#c9ae60; color:white;" class="btn">Our Programs</a>
                     </div>
             </div>
             <div class="col-md-6 ">
@@ -98,7 +98,7 @@
 
                             <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                             <p class="card-text">{{ sermon.snippet}}</p> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
-                            <h6 class="card-text">{{ sermon.date}}</h6>
+                            <h6 class="text-muted">{{ sermon.date}}</h6>
     {% comment %} 
                             <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
                         </div>
@@ -142,7 +142,7 @@
 
                             <h4 class="card-title"><a href="{% url 'flock:article_detail' slug=article.slug %}">{{article.title}}</a></h4> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
                             <p class="card-text">{{ article.snippet}}</p> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
-                            <h6 class="card-text">{{ article.date}}</h6>
+                            <h6 class="text-mutedy">{{ article.date}}</h6>
 {% comment %} 
                             <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:article_detail' slug=article.slug %}">Read More...</a> {% endcomment %}
                         </div>

@@ -30,3 +30,7 @@ def article_detail(request, slug):
     except Article.DoesNotExist:
         article = None
     return render(request, 'flock/article_detail.html', {'article':article})
+
+def contacts(request):
+    sermons = Sermon.objects.all().order_by('-date') #sermons variable receives data from db
+    return render(request, 'flock/contacts.html', {'sermons':sermons})

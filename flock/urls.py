@@ -9,7 +9,7 @@ app_name = 'flock'
 urlpatterns = [
     re_path(r'^$', views.home, name='home'),
 
-    re_path(r'programs/', views.sermon_list, name='programs'),
+    re_path(r'contacts/', views.contacts, name='contacts'),
 
     re_path(r'sermons/', views.sermon_list, name='sermons'),
     re_path(r'^(?P<slug>[\w-]+)/$', views.sermon_detail, name='sermon_detail'),
@@ -20,8 +20,6 @@ urlpatterns = [
     re_path(r'events/', views.sermon_list, name='events'),
     
     re_path(r'support_us/', views.sermon_list, name='support_us'),
-    
-    re_path(r'contact/', views.sermon_list, name='contact'),
 
 ]
 

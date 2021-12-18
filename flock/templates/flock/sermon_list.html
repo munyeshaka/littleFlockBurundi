@@ -19,9 +19,10 @@
                         <br>
                     </div>
                     <div class="card-body text-center">
-                        <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</h4> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
+                        <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
                         <p class="card-text">{{ sermon.snippet}}</a></p>
-                        <h6 class="card-text">{{ sermon.date}}</h6> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
+                        <h6 class="text-muted">{{ sermon.date}}</h6>
+                         <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
 {% comment %} 
                         <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
                     </div>

@@ -21,7 +21,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title"><a href="{% url 'flock:article_detail' slug=article.slug %}">{{article.title}}</a></h4> <!--article: namespace for templates of app, article_article_detail is name in views of slug url-->
                         <p class="card-text">{{ article.snippet}}</a></p>
-                        <h6 class="card-text">{{ article.date}}</a></h6> <!--article: namespace for templates of app, article_article_detail is name in views of slug url-->
+                        <h6 class="text-muted">{{ article.date}}</a></h6> <!--article: namespace for templates of app, article_article_detail is name in views of slug url-->
 {% comment %} 
                         <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'article:article_detail' slug=article.slug %}">Read More...</a> {% endcomment %}
                     </div>
