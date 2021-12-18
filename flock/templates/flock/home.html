@@ -177,12 +177,10 @@
 
                         <div class="col-md-4">
                             <br>
-                                <!-- 1:1 aspect ratio  "https://www.youtube.com//v/",$url-->
-
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qN3OueBm9F4" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ video.snippet}}" allowfullscreen></iframe>
                                   </div>
-                                  {{ video.snippet}}
+                                  
                         </div>
                     {% endfor%}
 

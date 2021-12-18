@@ -80,7 +80,7 @@ class Video(models.Model):
         super(Video, self).save()
 
     def snippet(self):
-        return self.youtube_link[:11]
+        return self.youtube_link[-11:] #to get youtube id of link
 
 
 
