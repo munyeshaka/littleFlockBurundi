@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from .models import *
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ContactMeForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.contrib import messages
 
 
 def home(request):
@@ -43,11 +42,6 @@ def article_detail(request, slug):
     return render(request, 'flock/article_detail.html', {'article':article})
 
 
-def contacts(request):
-    sermons = Sermon.objects.all().order_by('-date') #sermons variable receives data from db
-    return render(request, 'flock/contacts.html', {'sermons':sermons})
-
-
 def sendMail(request):
     form = ContactMeForm()
     if request.method == 'POST':
@@ -68,6 +62,6 @@ def sendMail(request):
                 send_mail(subject, message, sender, recipient, fail_silently=True)
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
-            messages.success(request, "Your message has been submited successfully")
-    
-    return render(request, "flock/events.html", {'form':form})
+            return render(request, "flock/success.html")
+    return render(request, 'flock/contacts.html', {'form':form})
+
