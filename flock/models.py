@@ -3,6 +3,8 @@ from django.db import models
 from django.template.defaultfilters import slugify # for auto-slug _  #pip install python-slugify
 import datetime
 from django.conf import settings
+from django import forms
+
 import os
 from django.utils.safestring import mark_safe
 
@@ -81,6 +83,11 @@ class Video(models.Model):
 
     def snippet(self):
         return self.youtube_link[-11:] #to get youtube id of link
+
+# class EmailForm(models.Model):
+#     #subject = forms.CharField()
+#     emailrecipient = forms.EmailField()
+#     message = forms.CharField(widget=forms.Textarea)
 
 
 
