@@ -9,13 +9,26 @@
     <!-- font Background image -->
 
     <div class="card">
-    <div class="card text-white" style="background: black;
-    overflow: hidden;" >
         
+        <div class="card text-white" style="background: black;
+        overflow: hidden;" >
+    
         <img src="{% static 'font1.jpg' %}" class="img-fluid" style="max-width: 100%; height: auto; object-fit: cover;
         opacity: 0.4;" alt="Little Flock Burundi">
 
         <div class="card-img-overlay text-center">
+
+            {% comment %} card for up coming events hejuru y'ifoto{% endcomment %}
+            
+            
+            <div class="alert alert-warning col-md-3 alert-dismissible fade show" role="alert">
+                <img src="{% static 'font1.jpg' %}" class="img-fluid" style="max-width: 100%; height: auto;" alt="Events">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            
+                
+
+                    {% comment %} text sasa zo hejuru y'ifoto {% endcomment %}
             <div class="col-md-3 text-center my-auto">
                 <div class="card-img-overlay card-body align-items-center col-md d-flex justify-content-center">
 
