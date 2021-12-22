@@ -3,10 +3,6 @@ from django.db import models
 from django.template.defaultfilters import slugify # for auto-slug _  #pip install python-slugify
 import datetime
 from django.conf import settings
-from django import forms
-
-import os
-from django.utils.safestring import mark_safe
 
 
 # Create your models here.
@@ -84,10 +80,24 @@ class Video(models.Model):
     def snippet(self):
         return self.youtube_link[-11:] #to get youtube id of link
 
-# class EmailForm(models.Model):
-#     #subject = forms.CharField()
-#     emailrecipient = forms.EmailField()
-#     message = forms.CharField(widget=forms.Textarea)
+
+class Event(models.Model):
+
+    title = models.CharField(max_length=120)
+    description = models.CharField(max_length=300)
+    in_progress = models.BooleanField(default=True)
+
+    created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True, auto_now_add=False)
+    expiration_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    duration = models.PositiveIntegerField(default=15)
+    #title description in_progress created_at updated_at expiration_date duration
+
+    def save(self, *args, **kw):
+            ## your custom date logic to verify if expired or not.
+            if self.expiration_date < datetime.datetime.now().date():
+                self.in_progress = False
+            super(Event, self).save(*args, **kw)
 
 
 

@@ -29,3 +29,7 @@ admin.site.register(Article,AdminArticle)
 class AdminVideo(admin.ModelAdmin):
     list_display = ['youtube_link', 'date']
 admin.site.register(Video,AdminVideo)
+
+class AdminEvent(admin.ModelAdmin):
+    list_display = ['title', 'description', 'in_progress', 'created_at', 'updated_at', 'expiration_date', 'duration']
+admin.site.register(Event,AdminEvent)

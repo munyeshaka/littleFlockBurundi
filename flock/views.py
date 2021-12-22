@@ -65,3 +65,10 @@ def sendMail(request):
             return render(request, "flock/success.html")
     return render(request, 'flock/contacts.html', {'form':form})
 
+def support_us(request):
+    articles = Article.objects.all().order_by('-date') #articles variable receives data from db
+    return render(request, 'flock/support_us.html', {'articles':articles}) #'articles' 
+
+def events(request):
+    articles = Article.objects.all().order_by('-date') #articles variable receives data from db
+    return render(request, 'flock/events.html', {'articles':articles}) #'articles'
