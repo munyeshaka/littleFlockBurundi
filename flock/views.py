@@ -11,7 +11,9 @@ def home(request):
     sermons = Sermon.objects.all().order_by('-date')[:3] #sermons variable receives data from db    ### ...(-date)[:3] _last 3 sermon
     articles = Article.objects.all().order_by('-date')[:3]
     videos = Video.objects.all().order_by('-date')[:2]
-    return render(request,'flock/home.html', {'sermons':sermons, 'articles':articles, 'videos':videos}) #this flock is namespace help to differenciate with other home.html of other app's templates : is the fold inside of templates of the app #'sermons' receives sermons variable and it will be used in templates
+    upcomingEvents = Event.objects.all().filter(expired = False).order_by('expiration_date')[:1]
+    return render(request,'flock/home.html', {'sermons':sermons, 'articles':articles, 'videos':videos, 'upcomingEvents':upcomingEvents}) 
+    #this flock is namespace help to differenciate with other home.html of other app's templates : is the fold inside of templates of the app #'sermons' receives sermons variable and it will be used in templates
 
 
 def sermon_list(request):
@@ -70,5 +72,5 @@ def support_us(request):
     return render(request, 'flock/support_us.html', {'articles':articles}) #'articles' 
 
 def events(request):
-    articles = Article.objects.all().order_by('-date') #articles variable receives data from db
-    return render(request, 'flock/events.html', {'articles':articles}) #'articles'
+    upcomingEvents = Event.objects.all().filter(expired = False).order_by('expiration_date') #upcoming variable receives data from db witch is not expired
+    return render(request, 'flock/events.html', {'upcomingEvents':upcomingEvents}) #'articles'

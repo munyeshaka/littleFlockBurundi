@@ -31,5 +31,7 @@ class AdminVideo(admin.ModelAdmin):
 admin.site.register(Video,AdminVideo)
 
 class AdminEvent(admin.ModelAdmin):
-    list_display = ['title', 'description', 'in_progress', 'created_at', 'updated_at', 'expiration_date', 'duration']
+    list_display = ['title', 'photo', 'description', 'expiration_date', 'expired']
 admin.site.register(Event,AdminEvent)
+
+

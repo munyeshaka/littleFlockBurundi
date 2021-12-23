@@ -6,30 +6,34 @@
 
 <section class="Events">
     <div class="container">
-        <div class="row m-5 justify-content-center" style="border:2px solid black;">
+    {% for upcomingEvent in upcomingEvents %}
+
+        <div class="row shadow m-5 justify-content-center" >
             <div class="col-md-2 p-3 text-center  align-items-center">
+                
                 <div class="row">
-                    <h1 class="text-center fw-bold fs-1">31</h1>
+                    <h3 class="text-center fw-bold">{{upcomingEvent.expiration_date}}</h3>
                 </div>
-                <div class="row">
-                <h3 class="text-center fw-bold">AUG</h3>
-                </div>
-                <div class="row">
-                <h3 class="text-center">2021</h3>
-                </div>
+
             </div>
+
+            <br>
             <div class="col-md-5 ">
-                <img src="media/lf1.jpg" class="w-100" alt="">
-            </div>
-            <div class="col-md-5 p-3">
-                <h2 class="fw-bold fs-1 text-center">Teens Bible Camp</h2>
-                <h5 class="text-muted text-center ">Periode 2pm-5pm</h5>
-                <P >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quae facere? Minima porro quidem dolorum iste quaerat debitis repellat id, consequuntur provident nobis eaque, molestias, in ex. Iure, saepe officia.</P>
+                <div class="inner">
+                <img src="{{ upcomingEvent.photo.url }}" class="w-100">
             </div>
         </div>
+        
+        <div class="col-md-5 p-3">
+                <h2 class="fw-bold fs-1 text-center">{{upcomingEvent.title}}</h2>
+                <P >{{upcomingEvent.description}}</P>
+            </div>
+        </div>
+    
+    {% endfor%}
+
     </div>
 </section>
 
-
-
+{% comment %} style="max-width: 100%; height: auto;" {% endcomment %}
 {% endblock %}

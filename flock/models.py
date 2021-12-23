@@ -84,20 +84,23 @@ class Video(models.Model):
 class Event(models.Model):
 
     title = models.CharField(max_length=120)
+    photo = models.ImageField(upload_to='%Y/%m/%d/', default='default.png', blank=True)
     description = models.CharField(max_length=300)
-    in_progress = models.BooleanField(default=True)
-
+    expired = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, auto_now_add=False)
-    expiration_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
-    duration = models.PositiveIntegerField(default=15)
-    #title description in_progress created_at updated_at expiration_date duration
+    expiration_date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    #title description expired created_at updated_at expiration_date duration
 
     def save(self, *args, **kw):
-            ## your custom date logic to verify if expired or not.
-            if self.expiration_date < datetime.datetime.now().date():
-                self.in_progress = False
-            super(Event, self).save(*args, **kw)
+            ## your event date logic to verify if expired or not.
+            
+        future_today_date = datetime.date.today()
+        if self.expiration_date < future_today_date:
+            self.expired = True
+        if self.expiration_date > future_today_date:
+            self.expired = False
+        super(Event, self).save(*args, **kw)
 
 
 
