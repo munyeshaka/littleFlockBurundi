@@ -102,6 +102,9 @@ class Event(models.Model):
             self.expired = False
         super(Event, self).save(*args, **kw)
 
+    def len(self):
+        return self.expired(expired=True)
+
 
 
 
