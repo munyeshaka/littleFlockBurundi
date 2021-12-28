@@ -3,6 +3,8 @@ from django.db import models
 from django.template.defaultfilters import slugify # for auto-slug _  #pip install python-slugify
 import datetime
 from django.conf import settings
+from django.utils.html import mark_safe
+
 
 
 # Create your models here.
@@ -32,12 +34,12 @@ class Sermon(models.Model):
 
 
     
-    # #display image in admin
-    # def image_tag(self):
-    #     # used in the admin site model as a "thumbnail"
-    #     return mark_safe('<img src="{}" width="150" height="150" />'.format(self.photo) )
-    # image_tag.short_description = 'Image'
-
+    #display image in admin
+    def image_tag(self):
+        # used in the admin site model as a "thumbnail"
+        return mark_safe('<img src="{}" width="150" height="150" />'.format(self.photo) )
+    image_tag.short_description = 'Preview Image'
+    image_tag.allow_tags=True
 
 class Article(models.Model):
     title = models.CharField(max_length=101)

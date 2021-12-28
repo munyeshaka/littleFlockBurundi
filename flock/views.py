@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from .models import *
-
-from django.shortcuts import render, redirect
 from .forms import ContactMeForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
