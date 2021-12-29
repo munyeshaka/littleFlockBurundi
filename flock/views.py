@@ -27,6 +27,9 @@ def homeKir(request):
     upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
     return render(request,'flock_kirundi/homeKir.html', {'sermonsKir':sermonsKir, 'articlesKir':articlesKir, 'videos':videos, 'upcomingEventssKir':upcomingEventssKir, 'upcomingEventsKir':upcomingEventsKir})
 
+def about(request):
+    upcomingEvents = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
+    return render(request,'flock/about.html', {'upcomingEvents':upcomingEvents})
 
 def sermon_list(request):
     sermons = Sermon.objects.all().order_by('-date') #sermons variable receives data from db

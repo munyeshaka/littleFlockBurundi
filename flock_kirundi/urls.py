@@ -10,6 +10,7 @@ app_name = 'flock_kirundi'
 urlpatterns = [
     re_path(r'^$', views.home, name='home'),
     re_path(r'flock_kirundi/homeKir/', views.homeKir, name='homeKir'),
+    re_path(r'flock_kirundi/aboutKir', views.aboutKir, name='aboutKir'),
 
     re_path(r'flock_kirundi/contactsKir/', views.sendMailKir, name='contactsKir'),
     re_path(r'flock_kirundi/eventsKir/', views.eventsKir, name='eventsKir'),

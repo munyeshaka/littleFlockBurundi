@@ -27,6 +27,9 @@ def homeKir(request):
     upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
     return render(request,'flock_kirundi/homeKir.html', {'sermonsKir':sermonsKir, 'articlesKir':articlesKir, 'videos':videos, 'upcomingEventssKir':upcomingEventssKir, 'upcomingEventsKir':upcomingEventsKir})
 
+def aboutKir(request):
+    upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
+    return render(request,'flock_kirundi/aboutKir.html', {'upcomingEventsKir':upcomingEventsKir})
 
 
 def sermon_listKir(request):
