@@ -37,10 +37,14 @@
             </li>
   
             <li class="nav-item">
+<<<<<<< HEAD
               <a class="nav-link active" href="{% url 'flock:events' %}">Events
                 <span class="badge badge-pill badge-dark" style="background-color:#c9a747">{{ upcomingEvents|length }}</span>
                 <!-- <span class="badge badge-danger" style="color:red">{{ upcomingEvents|length }}</span> -->
               </a>
+=======
+              <a class="nav-link active" href="{% url 'flock:events' %}">Events<span class="badge badge-light" style="color:red">{{ upcomingEvents|length }}</span></a>
+>>>>>>> 2ea3755651d24908ad5af4cd54e2b7507e48c185
             </li>
   
             <li class="nav-item">
@@ -49,6 +53,14 @@
   
             <li class="nav-item">
               <a class="nav-link active" href="{% url 'flock:contacts' %} ">Contacts</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'flock:home' %}">En</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'flock_kirundi:homeKir' %}">Kir</a>
             </li>
   
           </ul>

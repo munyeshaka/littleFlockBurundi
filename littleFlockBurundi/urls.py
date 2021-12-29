@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     re_path(r'^adminnflock/', admin.site.urls),
     re_path(r'^', include('flock.urls')),
+    re_path(r'^', include('flock_kirundi.urls')),
 ] 
 
 urlpatterns += staticfiles_urlpatterns()

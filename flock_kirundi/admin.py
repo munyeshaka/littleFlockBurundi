@@ -8,7 +8,7 @@ admin.site.site_title  =  "Little Flock Burundi admin site"
 admin.site.index_title  =  "Little Flock Burundi Admin"
 
 
-class AdminSermon(admin.ModelAdmin):
+class AdminKirundiSermon(admin.ModelAdmin):
 
     # explicitly reference fields to be shown, note photo_preview is read-only
     # def photo_preview(self, obj):
@@ -27,29 +27,29 @@ class AdminSermon(admin.ModelAdmin):
     list_display = ['title', 'image_in_table', 'body', 'date']
     
 
-admin.site.register(Sermon,AdminSermon)
+admin.site.register(KirundiSermon,AdminKirundiSermon)
 
 
-class AdminArticle(admin.ModelAdmin):
+class AdminKirundiArticle(admin.ModelAdmin):
     def image_in_table(self, obj):
         return format_html('<img src="{}" width="150" height="auto" />'.format(obj.photo.url))
 
     image_in_table.short_description = 'Photo'
     list_display = ['title', 'image_in_table', 'body', 'date']
 
-admin.site.register(Article,AdminArticle)
+admin.site.register(KirundiArticle,AdminKirundiArticle)
 
 
 class AdminVideo(admin.ModelAdmin):
     list_display = ['youtube_link', 'date']
 admin.site.register(Video,AdminVideo)
 
-class AdminEvent(admin.ModelAdmin):
+class AdminKirundiEvent(admin.ModelAdmin):
     def image_in_table(self, obj):
         return format_html('<img src="{}" width="150" height="auto" />'.format(obj.photo.url))
 
     image_in_table.short_description = 'Photo'
     list_display = ['title', 'image_in_table', 'description', 'expiration_date', 'expired']
-admin.site.register(Event,AdminEvent)
+admin.site.register(KirundiEvent,AdminKirundiEvent)
 
 

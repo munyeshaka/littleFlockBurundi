@@ -1,0 +1,111 @@
+{% extends 'flock_kirundi/base_layoutKir.html' %}
+
+{% block content %}
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 ">
+          <div class="card shadow section-title text-center">
+            <div class="card-header" style="background-color:#c9ae60;color:white;" >Programa yacu</div>
+            <div class="card-body">
+                <li class="list-group-item">Monday: </li>
+                <li class="list-group-item">Wednesday</li>
+                <li class="list-group-item">Friday</li>
+                <li class="list-group-item">Sunday</li>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            
+          <div class="card shadow ">
+            <div class="card-header  text-center " style="background-color:#c9ae60;color:white;">Address</div>
+            <div class="card-body">
+                <div class="col-md-5">
+                    <div class="contact-item d-flex mb-3">
+                        <div class="icon fs-4 text-danger">
+                            <i class="fas fa-envelope"> </i>
+                        </div>
+                        <div class="text ms-3 ">
+                            <h3 class="fs-5">Email</h3>
+                            <p class="text-muted m-0">LF@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item d-flex mb-3">
+                        <div class="icon fs-4 text-danger">
+                            <i class="fas fa-envelope"> </i>
+                        </div>
+                        <div class="text ms-3 ">
+                            <h3 class="fs-5">Phone</h3>
+                            <p class="text-muted m-0">+257 2222222</p>
+                        </div>
+                    </div>
+                    <div class="contact-item d-flex mb-3">
+                        <div class="icon fs-4 text-danger">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text ms-3 ">
+                            <h3 class="fs-5">Address</h3>
+                            <p class="text-muted m-0">Kigobe-sud, n 6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div> 
+
+<div class="container col-lg-8">
+    <div class="row justify-content-center">
+        <div class="contact shadow shadow bg-light " id="Contact">
+            <div class="container-lg py-4">
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="section-title text-center">
+                                <h2 class="fw-bold mb-5" style="color:#c9ae60;">Twandikire</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg-light justify-content-center">
+                        <div class="col-md-7 ">
+                            <div class="contact-form">
+                                <form class="form-contact contact_form container" action="{% url 'flock_kirundi:contactsKir' %}" method="post" id="contactForm"
+                                novalidate="novalidate">
+                                {% csrf_token %}
+                                                <div class="row">
+                                        <div class="col-lg-6 mb-4">
+                                            {{ form.emailid}}
+                                        </div>
+                                        <div class="col-lg-6 mb-4">
+                                            {{form.subject}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 mb-4">
+                                            {{form.message}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-lg-12 mb-4">
+                                                <div class="d-grid gap-2">
+                                                    <button type="submit" class="btn" style="background-color:#c9ae60; color:white;" >Kurungika</button>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
