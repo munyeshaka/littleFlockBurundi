@@ -1,0 +1,232 @@
+{% extends 'flock_kirundi/base_layoutKir.html' %} <!--namspace of templates-->
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+
+
+    <!-- font Background image -->
+
+    <div class="card">
+        
+        <div class="card text-white" style="background: black;
+        overflow: hidden;" >
+    
+        <img src="{% static 'font1.jpg' %}" class="img-fluid" style="max-width: 100%; height: auto; object-fit: cover;
+        opacity: 0.4;" alt="Little Flock Burundi">
+
+        <div class="card-img-overlay text-center">
+
+            {% comment %} card for up coming events hejuru y'ifoto{% endcomment %}
+            
+            {% for upcomingEvent in upcomingEventssKir %}
+            
+                <div class="alert alert-warning col-md-3 toast alert-dismissible fade show" role="alert" style="position: absolute; top: 4; right: 0;">
+                
+                    <img src="{{ upcomingEvent.photo.url }}" class="img-fluid" style="max-width: 100%; height: auto;" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+           
+              {% endfor%}
+                
+
+                    {% comment %} text sasa zo hejuru y'ifoto {% endcomment %}
+            <div class="col-md-3 text-center my-auto">
+                <div class="card-img-overlay card-body align-items-center col-md d-flex justify-content-center">
+
+                    <div class="inner">
+                        <div class="card-body" id="zoomText">
+                            <h1 class="card-title" data-mdb-animation="zoom-in" >Little Flock Burundi</h1>
+                            <br>
+                            <h4 class="card-text">Proclaim the Kingdom that has come through death and resurrection of Jesus Christ,</h4>
+                            <h4 class="card-text">portray its present glory and point to its full glory that is to come.</h4>
+                            <br>
+                            <a href="{% url 'flock_kirundi:sermonsKir' %}" style="background-color:#c9ae60; color:white;" class="btn">Ubutumwa</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end font Background image -->
+    
+<div class="container">
+    <!-- =============ABOUT US===============-->
+ {% comment %} <div class="container marketing"> {% endcomment %}
+    <div class="container">
+        <div class="row shadow m-6 justify-content-center">
+            <div class="col-md-6 p-5">
+                <h2 class="fw-bold fs-1">Aboturi</h2>
+                <P>We are a covenanted spiritual family that desires and pursues a Trinitarian fullness , for a lasting impact to the glory of God, our joy in Jesus Christ.
+
+                    Trinitarian fullness: <br>
+                    - Rooted in the Word of Christ<br>
+                    - Filled with the Power of the Holy Spirit <br>
+                    - Ablaze with love for the Father</P>
+                    
+                        <a href="{% url 'flock_kirundi:contactsKir' %}" style="background-color:#c9ae60; color:white;" class="btn">Programa yacu</a>
+                    
+            </div>
+            <div class="col-md-6 ">
+                <div class="inner">
+                    <img src="{% static 'aboutus.jpg' %}" class="w-100" style="max-width: 100%; height: auto;" alt="">
+                </div>
+            </div>
+        </div>
+   
+
+        <!-- ===============End About Us=========-->
+
+        <!-- =============Vision ===============-->
+    <div class="container">
+        <div class="row shadow m-6 justify-content-center">
+            <div class="col-md-6 ">
+                <div class="inner">
+                    <img src="{% static 'flock21a.jpg' %}" class="w-100" style="max-width: 100%; height: auto;" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 p-5">
+                <h2 class="fw-bold fs-1">Iyerekwa ryacu</h2>
+                <P>Our vision is to see strong eschatological communities of both rural and urban churches that proclaim the Kingdom that has come through death and resurrection of Jesus Christ, portray its present glory and point to its full glory that is to come.
+                </P>
+                
+                <a href="{% url 'flock_kirundi:support_usKir' %}" style="background-color:#c9ae60; color:white;" class="btn">Dushigikire</a>
+                
+            </div>
+
+    </div>
+
+
+            <!-- =============== yari Our Vision=========-->
+
+            <!-- =================Recent Sermons================= -->
+
+            <br>
+        <div class="row justify-content-center">
+            <h6 style="color:#c9ae60;" class="text-center">Ubutumwa</h6>
+            <h1 class="text-center">Ubutumwa bwavuba</h1>
+            
+            {% for sermon in sermonsKir %}  <!--sermons is variable of dictionnary in views that recieved data from variable and from db-->
+                <div class="col-md-4">
+                    <br>
+                    <div class="card shadow" style="width: 18rem; ">
+                        <div class="inner">
+                            <img class="card-img-top" style="max-width: 100%; height: auto;" src="{{ sermon.photo.url }}"> <!--flock_kirundi: namespace for templates of app, sermon_detail is name in views of slug url-->
+                        
+                            <br>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h4 class="card-title"><a href="{% url 'flock_kirundi:sermon_detailKir' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                            <p class="card-text">{{ sermon.snippet}}</p> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                            <h6 class="text-muted">{{ sermon.date}}</h6>
+    {% comment %} 
+                            <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+            
+            {% endfor%}
+        </div>
+   
+
+    <br>
+
+    <div class="inner">
+        <div class="card-body text-center">
+            <a href="{% url 'flock_kirundi:sermonsKir' %}" style="background-color:#c9ae60; color:white;" class="btn">Ubutumwa bose</a>
+        </div>
+    </div>
+
+                <!-- =================End of Recent Sermons================= -->
+
+              
+                            <!-- =================Recent Articles================= -->
+                            <br>
+        <div class="row justify-content-center">
+            <h6 style="color:#c9ae60;" class="text-center">Articles</h6>
+            <h1 class="text-center">Articles zavuba</h1>
+            
+            {% for article in articlesKir %}  <!--articles is variable of dictionnary in views that recieved data from variable and from db-->
+                <div class="col-md-4">
+                    <br>
+                    <div class="card shadow" style="width: 18rem; ">
+                        <div class="inner">
+                            <img class="card-img-top" style="max-width: 100%; height: auto;" src="{{ article.photo.url }}"> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
+                        
+                            <br>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h4 class="card-title"><a href="{% url 'flock_kirundi:article_detailKir' slug=article.slug %}">{{article.title}}</a></h4> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
+                            <p class="card-text">{{ article.snippet}}</p> <!--flock: namespace for templates of app, article_detail is name in views of slug url-->
+                            <h6 class="text-mutedy">{{ article.date}}</h6>
+ {% comment %} 
+                            <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:article_detail' slug=article.slug %}">Read More...</a> {% endcomment %}
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+            
+            {% endfor%}
+        </div>
+    </div>
+
+
+    <br>
+
+        <div class="inner">
+            <div class="card-body text-center">
+                <a href="{% url 'flock_kirundi:articlesKir' %}" style="background-color:#c9ae60; color:white;" class="btn">Izindi Articles</a>
+            </div>
+        </div>
+    
+                <!-- =================End of Recent Articles================= -->
+
+                <!--Yutube video-->
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <h6 style="color:#c9ae60;" class="text-center">Videwo zokuri Youtube</h6>
+            <h1 class="text-center">Little Flock Burundi</h1>
+            
+            {% for video in videos %}
+
+                <div class="col-md-4">
+                    <br>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ video.snippet}}" style="width: 18rem; "allowfullscreen></iframe>
+                            </div>
+                            
+                </div>
+            {% endfor%}
+
+        </div>
+    </div>
+            
+    <br>
+    <div class="inner">
+    <div class="card-body text-center">
+        <a href="https://www.youtube.com/channel/UCbjZ4CtsHcdz5E8-HatdAhg/featured" style="background-color:#c9ae60; color:white;" class="btn">Ja kuri youtube urabizindi</a>
+    </div>
+</div>
+    <br>
+    <!--End youtube video-->
+
+
+    <hr class="featurette-divider">
+    
+    <br>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</div>
+
+{% endblock %}

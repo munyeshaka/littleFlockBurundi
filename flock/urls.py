@@ -8,6 +8,7 @@ app_name = 'flock'
 
 urlpatterns = [
     re_path(r'^$', views.home, name='home'),
+    re_path(r'flock_kirundi/homeKir', views.homeKir, name='homeKir'),
 
     re_path(r'contacts/', views.sendMail, name='contacts'),
     re_path(r'flock/events/', views.events, name='events'),

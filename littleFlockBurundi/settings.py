@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'sorl.thumbnail',
     'flock',
+    'flock_kirundi',
 
 ]
 

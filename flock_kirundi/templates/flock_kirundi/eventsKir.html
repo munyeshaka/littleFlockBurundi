@@ -1,0 +1,39 @@
+{% extends 'flock_kirundi/base_layoutKir.html' %} <!--namspace of templates-->
+
+{% block content %}
+<br>
+<br>
+
+<section class="Events">
+    <div class="container">
+    {% for upcomingEvent in upcomingEventsKir %}
+
+        <div class="row shadow m-5 justify-content-center" >
+            <div class="col-md-2 p-3 text-center  align-items-center">
+                
+                <div class="row">
+                    <h3 class="text-center fw-bold">{{upcomingEvent.expiration_date}}</h3>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="col-md-5 ">
+                <div class="inner">
+                <img src="{{ upcomingEvent.photo.url }}" class="w-100">
+            </div>
+        </div>
+        
+        <div class="col-md-5 p-3">
+                <h2 class="fw-bold fs-1 text-center">{{upcomingEvent.title}}</h2>
+                <P >{{upcomingEvent.description}}</P>
+            </div>
+        </div>
+    
+    {% endfor%}
+
+    </div>
+</section>
+
+{% comment %} style="max-width: 100%; height: auto;" {% endcomment %}
+{% endblock %}
