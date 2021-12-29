@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Little Flock Burundi</title>
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+    <nav id="navbar" style=" transition: 0.5s;" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
       <div class="container-lg">
         <a class="navbar-brand" href="#">
-          <img src="{% static 'logo.png' %}" alt="Little Flock" width="50px" height="50px">
+          <img id="logo" src="{% static 'logo.png' %}" alt="Little Flock" style="width: 160px;height: 120px;transition: 0.5s;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,7 +37,10 @@
             </li>
   
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'flock:events' %}">Events<span class="badge badge-danger" style="color:red">{{ upcomingEvents|length }}</span></a>
+              <a class="nav-link active" href="{% url 'flock:events' %}">Events
+                <span class="badge badge-pill badge-dark" style="background-color:#c9a747">{{ upcomingEvents|length }}</span>
+                <!-- <span class="badge badge-danger" style="color:red">{{ upcomingEvents|length }}</span> -->
+              </a>
             </li>
   
             <li class="nav-item">
@@ -52,6 +56,7 @@
       </div>
     </nav>
   </header>
+  <br>
   
 
 
@@ -60,19 +65,15 @@
     {% block content%}
 
     {% endblock %}
-      
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-      
 
-
-</body>
-
-
-<!-- Footer -->
-<footer class="page-footer font-small mdb-color pt-4">
+  <!-- fofo -->
+  <!-- Footer -->
+<footer class="page-footer bg-dark font-small mdb-color text-center text-white">
+  <!-- Grid container -->
+  <div class="container-lg p-4">
 
     <!-- Footer Elements -->
-    <div class="container">
+    <div class="container-fluid">
       
       <!--Grid row-->
       <div class="row">
@@ -183,92 +184,116 @@
     
     </div>
     <!-- Footer Elements -->
-  
-      <!-- autre Footer Elements -->
-  <div class="container">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
-    <!--Grid row-->
-    <div class="row">
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
 
-      <!--Grid column-->
-          <!-- Social buttons -->
-    <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1">
-            <i class="fab fa-facebook-f"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
-            <i class="fab fa-twitter"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-            <i class="fab fa-google-plus-g"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-li mx-1">
-            <i class="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-dribbble mx-1">
-            <i class="fab fa-dribbble"> </i>
-          </a>
-        </li>
-      </ul>
-      <!-- Social buttons -->
-      <!--Grid column-->
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
 
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
 
-        <form class="input-group">
-          <input type="text" class="form-control form-control-sm" placeholder="Your email"
-            aria-label="Your email" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
           </div>
-        </form>
+          <!--Grid column-->
 
-      </div>
-      <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example21" placeholder="Your email" class="form-control" />
+            </div>
+          </div>
+          <!--Grid column-->
 
-    </div>
-    <!--Grid row-->
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
 
   </div>
-  <!-- end autre Footer Elements -->
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © {% now "Y" %} Copyright :
+      <a href="https://egeratech.com/"><span style="color: green;">egera</span><span style="color: blue;">Tech</span></a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+  <!-- end fofo -->
+
+  
+      
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      
 
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© {% now "Y" %} Copyright :
-      <a href="https://egeratech.com/"> egeraTech</a>
-    </div>
-    <!-- Copyright -->
+</body>
+
+
   
 
-{% comment %} 
-    <article id="wrap">
-      <article id="lightings">
-          <section id="one">
-                <section id="two">
-                    <section id="three">
-                        <section id="four">
-                            <section id="five">
-                                <h1>helloooo test</h1>
-                            </section>
-                        </section>
-                    </section>
-                </section>
-        </section>
-        </article>
-    </article>
- {% endcomment %}
-
-
-
-  </footer>
-  <!-- Footer -->
+  <script>
+    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("navbar").style.padding = "0px 0px";
+        document.getElementById("logo").style.width = "80px";
+        document.getElementById("logo").style.height = "60px";
+      } else {
+        document.getElementById("navbar").style.padding = "0px 0px";
+        document.getElementById("logo").style.width = "160px";
+        document.getElementById("logo").style.height = "120px";
+        document.getElementById("navbar").style.marginBottom = "10px";
+      }
+    }
+    </script>
+    </html>
+    
