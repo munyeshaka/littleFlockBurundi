@@ -1,13 +1,16 @@
 {% extends 'flock/base_layout.html' %}
 
 {% block content %}
-    <div class="sermon-detail">
-    <div class="sermon">
-    <img src="{{ sermon.photo.url }}"/>
-    <h2>{{ sermon.title }}</h2>
-    <p>{{ sermon.body }}</p>
-    <p>{{ sermon.date }}</p>
-    </div>
-    </div>
+    
+    <div class="card shadow mb-3">
+        <img class="card-img-top" src="{{ sermon.photo.url }}" alt="Sermon detail">
+        <div class="card-body">
+          <h4 class="card-title text-center">{{ sermon.title }}</h4>
+          <p class="card-text text-center">{{ sermon.body }}</p>
+          <p class="card-text text-center"><small class="text-muted">{{ sermon.date }}</small></p>
+        </div>
+      </div>
+      <br>
+
 
 {% endblock %}

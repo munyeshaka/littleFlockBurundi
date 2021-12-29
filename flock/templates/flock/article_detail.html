@@ -1,13 +1,15 @@
 {% extends 'flock/base_layout.html' %}
 
 {% block content %}
-    <div class="article-detail">
-    <div class="article">
-    <img src="{{ article.photo.url }}"/>
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.body }}</p>
-    <p>{{ article.date }}</p>
-    </div>
-    </div>
+    
+    <div class="card shadow mb-3">
+        <img class="card-img-top" src="{{ article.photo.url }}" alt="article detail">
+        <div class="card-body">
+          <h4 class="card-title text-center">{{ article.title }}</h4>
+          <p class="card-text text-center">{{ article.body }}</p>
+          <p class="card-text text-center"><small class="text-muted">{{ article.date }}</small></p>
+        </div>
+      </div>
+      <br
 
 {% endblock %}
