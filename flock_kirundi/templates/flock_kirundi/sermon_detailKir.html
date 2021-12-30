@@ -1,13 +1,14 @@
 {% extends 'flock_kirundi/base_layoutKir.html' %}
 
 {% block content %}
-    <div class="sermon-detail">
-    <div class="sermon">
-    <img src="{{ sermon.photo.url }}"/>
-    <h2>{{ sermon.title }}</h2>
-    <p>{{ sermon.body }}</p>
-    <p>{{ sermon.date }}</p>
+<div class="card shadow mb-3">
+    <img class="card-img-top" src="{{ sermonKir.photo.url }}" alt="Sermon Kirundi detail">
+    <div class="card-body">
+      <h4 class="card-title text-center">{{ sermonKir.title }}</h4>
+      <p class="card-text text-center">{{ sermonKir.body }}</p>
+      <p class="card-text text-center"><small class="text-muted">{{ sermonKir.date }}</small></p>
     </div>
-    </div>
+  </div>
+  <br>
 
 {% endblock %}
