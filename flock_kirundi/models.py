@@ -58,7 +58,7 @@ class KirundiArticle(models.Model):
     def snippet(self):
         return self.body[:100] +'...'
 
-class Video(models.Model):
+class KirundiVideo(models.Model):
     youtube_link = models.CharField(max_length=101)
     slug = models.SlugField(max_length=150, unique=True)
     date = models.DateTimeField(auto_now_add=True)
@@ -67,12 +67,12 @@ class Video(models.Model):
         return self.youtube_link
     
     def save(self): # for auto-slug __   date and title
-        super(Video, self).save()
+        super(KirundiVideo, self).save()
         date = datetime.datetime.now()
         self.slug = '%i-%i-%i-%s-%s-%s-%s' % (
             date.year, date.month, date.day, date.hour, date.minute, date.second, slugify(self.youtube_link)
         )
-        super(Video, self).save()
+        super(KirundiVideo, self).save()
 
     def snippet(self):
         return self.youtube_link[-11:] #to get youtube id of link

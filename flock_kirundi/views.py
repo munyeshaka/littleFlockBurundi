@@ -22,10 +22,10 @@ def home(request):
 def homeKir(request):
     sermonsKir = KirundiSermon.objects.all().order_by('-date')[:3] #sermons variable receives data from db    ### ...(-date)[:3] _last 3 sermon
     articlesKir = KirundiArticle.objects.all().order_by('-date')[:3]
-    videos = Video.objects.all().order_by('-date')[:2]
+    videosKir = KirundiVideo.objects.all().order_by('-date')[:2]
     upcomingEventssKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')[:1]
     upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
-    return render(request,'flock_kirundi/homeKir.html', {'sermonsKir':sermonsKir, 'articlesKir':articlesKir, 'videos':videos, 'upcomingEventssKir':upcomingEventssKir, 'upcomingEventsKir':upcomingEventsKir})
+    return render(request,'flock_kirundi/homeKir.html', {'sermonsKir':sermonsKir, 'articlesKir':articlesKir, 'videos':videosKir, 'upcomingEventssKir':upcomingEventssKir, 'upcomingEventsKir':upcomingEventsKir})
 
 def aboutKir(request):
     upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')

@@ -40,9 +40,9 @@ class AdminKirundiArticle(admin.ModelAdmin):
 admin.site.register(KirundiArticle,AdminKirundiArticle)
 
 
-class AdminVideo(admin.ModelAdmin):
+class AdminKirundiVideo(admin.ModelAdmin):
     list_display = ['youtube_link', 'date']
-admin.site.register(Video,AdminVideo)
+admin.site.register(KirundiVideo,AdminKirundiVideo)
 
 class AdminKirundiEvent(admin.ModelAdmin):
     def image_in_table(self, obj):
