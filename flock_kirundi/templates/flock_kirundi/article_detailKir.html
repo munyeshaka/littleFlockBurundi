@@ -1,13 +1,14 @@
 {% extends 'flock_kirundi/base_layoutKir.html' %}
 
 {% block content %}
-    <div class="article-detail">
-    <div class="article">
-    <img src="{{ article.photo.url }}"/>
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.body }}</p>
-    <p>{{ article.date }}</p>
+    <div class="card shadow mb-3">
+        <img class="card-img-top" src="{{ articleKir.photo.url }}" alt="article Kirundi detail">
+        <div class="card-body">
+        <h4 class="card-title text-center">{{ articleKir.title }}</h4>
+        <p class="card-text text-center">{{ articleKir.body }}</p>
+        <p class="card-text text-center"><small class="text-muted">{{ articleKir.date }}</small></p>
+        </div>
     </div>
-    </div>
+    <br>
 
 {% endblock %}
