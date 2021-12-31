@@ -20,7 +20,7 @@ urlpatterns = [
 
 
     re_path(r'flock_kirundi/sermonsKir/', views.sermon_listKir, name='sermonsKir'),
-    re_path(r'^/(?P<slug>[\w-]+)/$', views.sermon_detailKir, name='sermon_detailKir'),
+    re_path(r'^(?P<slug>[\w-]+)/$', views.sermon_detailKir, name='sermon_detailKir'),
 
     re_path(r'flock_kirundi/articlesKir/', views.article_listKir, name='articlesKir'),
     re_path(r'flock_kirundi/(?P<slug>[\w-]+)/$', views.article_detailKir, name='article_detailKir'),
