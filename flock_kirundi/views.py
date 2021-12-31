@@ -96,8 +96,9 @@ def successKir(request):
     return render(request, 'flock_kirundi/successKir.html', {'upcomingEventsKir':upcomingEventsKir})
 
 def support_usKir(request):
+    teams = Team.objects.all() 
     upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
-    return render(request, 'flock_kirundi/support_usKir.html', {'upcomingEventsKir':upcomingEventsKir}) #'articlesKir' 
+    return render(request, 'flock_kirundi/support_usKir.html', {'upcomingEventsKir':upcomingEventsKir, 'teams':teams}) #'articlesKir' 
 
 def eventsKir(request):
     upcomingEventsKir = KirundiEvent.objects.all().filter(expired = False).order_by('expiration_date')
