@@ -33,66 +33,46 @@
           <h4 style="color:#c9ae60;" class="text-center">OUR TEAM</h4>
           
           <div class="row justify-content-center">
-            {% for sermon in articles %}  <!--sermons is variable of dictionnary in views that recieved data from variable and from db-->
-    
-                <div class="col-md-4">
-                    <br>
-                    <div class="card shadow" style="width: 18rem;">
-                        <div class="inner"><img class="card-img-top rounded-circle" style="height: 270px;" src="{{ sermon.photo.url }}">
-                        
-                            <br>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
-                            <p class="card-text">{{ sermon.snippet}}</a></p>
-                            <h6 class="text-muted">{{ sermon.date}}</h6>
-                             <!--flock: namespace for templates of app, sermon_sermon_detail is name in views of slug url-->
-    {% comment %} 
-                            <a style="background-color:#c9ae60; color:white;" class="btn" href="{% url 'flock:sermon_detail' slug=sermon.slug %}">Read More...</a> {% endcomment %}
-                        </div>
-    
+            {% for sermon in articles %}
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
                     </div>
-                    <br>
+                    <div class="team-content">
+                        <h3 class="title">Dana Robins</h3>
+                        <span class="post">Marketing Consultant</span>
+                    </div>
+                    <ul class="social">
+                        <li>
+                            <a href="#" class="fa fa-envelope"></a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title">John Doe</h3>
+                        <span class="post">Marketing Consultant</span>
+                    </div>
+                    <ul class="social">
+                        <li>
+                            <a href="#" class="fa fa-envelope"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
                 
             {% endfor %}
             </div>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="our-team">
-            <div class="pic">
-                <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
-            </div>
-            <div class="team-content">
-                <h3 class="title">Dana Robins</h3>
-                <span class="post">Marketing Consultant</span>
-            </div>
-            <ul class="social">
-                <li>
-                    <a href="#" class="fa fa-envelope"></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="our-team">
-            <div class="pic">
-                <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
-            </div>
-            <div class="team-content">
-                <h3 class="title">John Doe</h3>
-                <span class="post">Marketing Consultant</span>
-            </div>
-            <ul class="social">
-                <li>
-                    <a href="#" class="fa fa-envelope"></a>
-                </li>
-            </ul>
-        </div>
-    </div>
     <br>
     <br>
     <br>

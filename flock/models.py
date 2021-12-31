@@ -99,6 +99,11 @@ class Event(models.Model):
     def len(self):
         return self.expired(expired=True)
 
-
+class Team(models.Model):
+    photo = models.ImageField(upload_to='%Y/%m/%d/', default='profil.png', blank=True)
+    full_Name = models.CharField(max_length=80)
+    service = models.CharField(max_length=80)
+    email = models.CharField(max_length=80)
+    
 
 
