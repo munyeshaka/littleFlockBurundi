@@ -297,30 +297,26 @@
   
       
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+      // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+      window.onscroll = function() {scrollFunction()};
       
+      function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.getElementById("navbar").style.padding = "0px 0px";
+          document.getElementById("logo").style.width = "80px";
+          document.getElementById("logo").style.height = "60px";
+        } else {
+          document.getElementById("navbar").style.padding = "0px 0px";
+          document.getElementById("logo").style.width = "120px";
+          document.getElementById("logo").style.height = "90px";
+          document.getElementById("navbar").style.marginBottom = "10px";
+        }
+      }
+      </script>
 
 
 </body>
 
-
-  
-
-  <script>
-    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navbar").style.padding = "0px 0px";
-        document.getElementById("logo").style.width = "80px";
-        document.getElementById("logo").style.height = "60px";
-      } else {
-        document.getElementById("navbar").style.padding = "0px 0px";
-        document.getElementById("logo").style.width = "120px";
-        document.getElementById("logo").style.height = "90px";
-        document.getElementById("navbar").style.marginBottom = "10px";
-      }
-    }
-    </script>
     </html>
     

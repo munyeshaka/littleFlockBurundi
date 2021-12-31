@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <title>Little Flock Burundi</title>
+    <style>
+      body{
+    background-color:#f6f6f8 ;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+      }
+      .ok{
+        color: #6b461b;
+      }
+    </style>
 </head>
 
 <header>
@@ -74,10 +85,28 @@
     {% endblock %}
       
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+      // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+      window.onscroll = function() {scrollFunction()};
       
+      function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.getElementById("navbar").style.padding = "0px 0px";
+          document.getElementById("logo").style.width = "80px";
+          document.getElementById("logo").style.height = "60px";
+        } else {
+          document.getElementById("navbar").style.padding = "0px 0px";
+          document.getElementById("logo").style.width = "120px";
+          document.getElementById("logo").style.height = "90px";
+          document.getElementById("navbar").style.marginBottom = "10px";
+        }
+      }
+      </script> 
 
 
 </body>
+
+
 
 
 <!-- Footer -->
