@@ -38,7 +38,7 @@ class Article(models.Model):
     slug = models.SlugField(max_length=150, unique=True)
     date = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
-    photo = models.ImageField(upload_to='%Y/%m/%d/', blank=True)
+    photo = models.ImageField(upload_to='%Y/%m/%d/', default='default.png', blank=True)
     # title slug date body thumb
 
     def __str__(self):

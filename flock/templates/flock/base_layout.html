@@ -18,7 +18,7 @@
     <nav id="navbar" style=" transition: 0.5s;" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top p-0 ">
       <div class="container-lg">
         <a class="navbar-brand" href="#">
-          <img id="logo" src="{% static 'logo.png' %}" alt="Little Flock" style="width: 160px;height: 120px;transition: 0.5s;">
+          <img id="logo" src="{% static 'logo.png' %}" alt="Little Flock" style="width: 120px;height: 90px;transition: 0.5s;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -276,7 +276,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © {% now "Y" %} Copyright :
-      <a href="https://egeratech.com/" style="text-decoration: none;"><span style="color: green;">egera</span><span style="color: blue;">Tech</span></a>
+      <a href="https://egeratech.com/" style="text-decoration: none;"><span style="color: green; background:white; border-radius:5px 0px 0px 5px; padding-left:2px;">egera</span><span style="color: blue; background:white; border-radius:0px 5px 5px 0px; padding-right:2px;">Tech</span></a>
   </div>
   <!-- Copyright -->
 </footer>
@@ -305,9 +305,15 @@
         document.getElementById("logo").style.height = "60px";
       } else {
         document.getElementById("navbar").style.padding = "0px 0px";
+<<<<<<< HEAD
         document.getElementById("logo").style.width = "160px";
         document.getElementById("logo").style.height = "120px";
         document.getElementById("navbar").style.marginBottom = "50px";
+=======
+        document.getElementById("logo").style.width = "120px";
+        document.getElementById("logo").style.height = "90px";
+        document.getElementById("navbar").style.marginBottom = "10px";
+>>>>>>> 22079bca15aa1c3a14d57920933a0c42066cb4c4
       }
     }
     </script>
