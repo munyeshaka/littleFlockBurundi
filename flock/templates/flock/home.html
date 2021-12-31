@@ -120,7 +120,7 @@
                         </div>
                         <div class="card-body text-center">
 
-                            <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}">{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+                            <h4 class="card-title"><a href="{% url 'flock:sermon_detail' slug=sermon.slug %}" >{{sermon.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                             <p class="card-text">{{ sermon.snippet}}</p> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
                             <h6 class="text-muted">{{ sermon.date}}</h6>
     {% comment %} 
