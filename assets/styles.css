@@ -130,15 +130,15 @@ h1 div:first-child {
 
 .our-team {
     padding: 0 0 40px;
-    background: #f9f9f9;
+    background: white;
     text-align: center;
     overflow: hidden;
     position: relative;
-    border-bottom: 5px solid #00325a;
+    border-bottom: 5px solid #6b461b;
 }
 
 .our-team:hover {
-    border-bottom: 5px solid #2f2f2f;
+    border-bottom: 5px solid #6b461b;
 }
 
 .our-team .pic {
@@ -155,7 +155,7 @@ h1 div:first-child {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #00325a;
+    background: #6b461b;
     position: absolute;
     bottom: 135%;
     right: 0;
@@ -167,7 +167,7 @@ h1 div:first-child {
 
 .our-team:hover .pic:before {
     height: 100%;
-    background: #2f2f2f;
+    background: #c9ae60;
 }
 
 .our-team .pic:after {
@@ -175,7 +175,7 @@ h1 div:first-child {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #ffffff00;
+    background: #c9ae60;
     position: absolute;
     top: 0;
     left: 0;
@@ -184,7 +184,7 @@ h1 div:first-child {
 }
 
 .our-team:hover .pic:after {
-    background: #145889;
+    background: #6b461b;
 }
 
 .our-team .pic img {
@@ -228,7 +228,8 @@ h1 div:first-child {
     width: 100%;
     padding-top: 10px;
     margin: 0;
-    background: #2f2f2f;
+    color: white;
+    background: #c9ae60;
     position: absolute;
     bottom: -100px;
     left: 0;

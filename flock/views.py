@@ -96,8 +96,9 @@ def success(request):
 
 def support_us(request):
     articles = Article.objects.all().order_by('-date') #articles variable receives data from db
+    teams = Team.objects.all() #articles variable receives data from db
     upcomingEvents = Event.objects.all().filter(expired = False).order_by('expiration_date')
-    return render(request, 'flock/support_us.html', {'articles':articles, 'upcomingEvents':upcomingEvents}) #'articles' 
+    return render(request, 'flock/support_us.html', {'articles':articles, 'upcomingEvents':upcomingEvents, 'teams':teams}) #'articles' 
 
 def events(request):
     upcomingEvents = Event.objects.all().filter(expired = False).order_by('expiration_date')

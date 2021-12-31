@@ -44,6 +44,7 @@ class AdminVideo(admin.ModelAdmin):
     list_display = ['youtube_link', 'date']
 admin.site.register(Video,AdminVideo)
 
+
 class AdminEvent(admin.ModelAdmin):
     def image_in_table(self, obj):
         return format_html('<img src="{}" width="150" height="auto" />'.format(obj.photo.url))
@@ -53,3 +54,10 @@ class AdminEvent(admin.ModelAdmin):
 admin.site.register(Event,AdminEvent)
 
 
+class AdminTeam(admin.ModelAdmin):
+    def image_in_table(self, obj):
+        return format_html('<img src="{}" width="150" height="auto" />'.format(obj.photo.url))
+
+    image_in_table.short_description = 'Photo'
+    list_display = ['full_Name', 'image_in_table', 'service', 'email', 'phone_1', 'phone_2']
+admin.site.register(Team,AdminTeam)
