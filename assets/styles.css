@@ -3,19 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Denk+One&family=Pushster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
+
 
 #lok {
     font-family: 'Denk One', sans-serif;
 }
 
-body {
-    background: #f0f0f0f0;
-}
+
 
 .container {
     margin-top: 8%;
