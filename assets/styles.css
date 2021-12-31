@@ -7,22 +7,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    
 }
 
-<<<<<<< HEAD
-#lok{
+#lok {
     font-family: 'Denk One', sans-serif;
 }
 
 body {
     background: #f0f0f0f0;
-    
-    
-=======
-body {
-    background: #f0f0f0f0
->>>>>>> fc721006ddc14bc5d4ac4294f61d5cb7acaa7067
 }
 
 .container {
