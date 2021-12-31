@@ -3,8 +3,6 @@ from django.db import models
 from django.template.defaultfilters import slugify # for auto-slug _  #pip install python-slugify
 import datetime
 from django.conf import settings
-from django.utils.html import format_html
-from django.contrib.admin.decorators import display
 
 # Create your models here.
 
@@ -100,10 +98,13 @@ class Event(models.Model):
         return self.expired(expired=True)
 
 class Team(models.Model):
+    full_Name = models.CharField(max_length=50)
     photo = models.ImageField(upload_to='%Y/%m/%d/', default='profil.png', blank=True)
-    full_Name = models.CharField(max_length=80)
-    service = models.CharField(max_length=80)
-    email = models.CharField(max_length=80)
+    service = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    phone_1 = models.CharField(max_length=50)
+    phone_2 = models.CharField(max_length=50)
+    
     
 
 
