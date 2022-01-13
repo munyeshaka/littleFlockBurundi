@@ -21,13 +21,13 @@
             
             {% for upcomingEvent in upcomingEventss %}
             
-                <div class="alert alert-warning col-md-3 toast alert-dismissible fade show" role="alert" style="position: absolute; top: 4; right: 0;">
+                <div class="alert alert-warning col-md-3 toast alert-dismissible fade show" role="alert" style="position: absolute; top: 4; right: 0; ">
                 
-                    <img src="{{ upcomingEvent.photo.url }}" class="img-fluid" style="max-width: 100%; height: auto;" alt="">
+                    <img src="{{ upcomingEvent.photo.url }}" class="img-fluid" style="max-width: 40%; height: auto;" alt="">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
            
-              {% endfor%}
+            {% endfor%}
                 
 
                     {% comment %} text sasa zo hejuru y'ifoto {% endcomment %}
