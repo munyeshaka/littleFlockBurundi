@@ -45,7 +45,10 @@ def sermon_detail(request, slug):
     except Sermon.DoesNotExist:
         sermon = None
     upcomingEvents = Event.objects.all().filter(expired = False).order_by('expiration_date')
-    return render(request, 'flock/sermon_detail.html', {'sermon':sermon, 'upcomingEvents':upcomingEvents})
+
+    recentSermons = Sermon.objects.all().order_by('-date')[:5] #sermons variable receives data from db    ### ...(-date)[:3] _last 3 sermon
+
+    return render(request, 'flock/sermon_detail.html', {'sermon':sermon, 'upcomingEvents':upcomingEvents, 'recentSermons':recentSermons})
 
 
 def article_list(request):
@@ -60,7 +63,10 @@ def article_detail(request, slug):
     except Article.DoesNotExist:
         article = None
     upcomingEvents = Event.objects.all().filter(expired = False).order_by('expiration_date')
-    return render(request, 'flock/article_detail.html', {'article':article, 'upcomingEvents':upcomingEvents})
+
+    recentArticles = Article.objects.all().order_by('-date')[:5]
+
+    return render(request, 'flock/article_detail.html', {'article':article, 'upcomingEvents':upcomingEvents, 'recentArticles':recentArticles})
 
 
 def sendMail(request):

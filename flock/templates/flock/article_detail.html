@@ -2,9 +2,7 @@
 
 {% block content %}
 <br>
-<br>
 <div class="container">
-
   <div class="card shadow mb-3">
     <div class="card-body">
       <div class="inner">
@@ -20,11 +18,31 @@
     </div>
 
     <br>
+
   </div>
   <br>
-  
+
+  <div class="row">
+    <div class="col-sm-6 ">
+        <div class="card shadow ">
+            <div class="card-header  text-center " style="background-color:#c9ae60;color:white;">Recent Articles</div>
+            <div class="card-body">
+                <div class="col-md-12">
+                  {% for recentArticle in recentArticles %}
+                    <div class="contact-item d-flex mb-3">
+                        <div class="text ms-3 ">
+                            <h4 class="text-muted m-0"><a href="{% url 'flock:sermon_detail' slug=recentArticle.slug %}" >{{recentArticle.title}}</a></h4> <!--flock: namespace for templates of app, sermon_detail is name in views of slug url-->
+
+                        </div>
+                    </div>
+                  {% endfor%}
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
 </div>
-    
+<br> 
 <br>
 
 
