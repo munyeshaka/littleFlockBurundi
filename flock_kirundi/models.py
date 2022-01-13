@@ -89,6 +89,9 @@ class KirundiEvent(models.Model):
     expiration_date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     #title description expired created_at updated_at expiration_date duration
 
+    def __str__(self):
+        return self.title
+
     def save(self, *args, **kw):
             ## your Kirundievent date logic to verify if expired or not.
             
