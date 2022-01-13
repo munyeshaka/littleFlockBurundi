@@ -1,18 +1,31 @@
 {% extends 'flock/base_layout.html' %}
 
 {% block content %}
-    <br>
-    <br>
-    <br>
-    <div class="card shadow mb-3">
-        <img class="card-img-top" src="{{ sermon.photo.url }}" alt="Sermon detail" style="width: 100px; height: 100px;">
-        <div class="card-body">
-          <h4 class="card-title text-center" style="text-decoration: none; color: #c9a747;">{{ sermon.title }}</h4>
-          <p class="card-text text-center">{{ sermon.body }}</p>
-          <p class="card-text text-center"><small class="text-muted">{{ sermon.date }}</small></p>
-        </div>
+<br>
+<br>
+<div class="container">
+
+  <div class="card shadow mb-3">
+    <div class="card-body">
+      <div class="inner">
+        <img class="card-img-top " src="{{ sermon.photo.url }}" alt="Sermon detail" style="max-width: 40%; height: auto;">
       </div>
-      <br>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title" style="text-decoration: none; color: #c9a747;">{{ sermon.title }}</h4>
+      <p class="card-text ">{{ sermon.body }}</p>
+      <p class="card-text "><small class="text-muted">{{ sermon.date }}</small></p>
+      
+      <h6 class="card-body" ><a style="text-decoration: none; color: #c9a747;" href="{% url 'flock:contacts' %} ">Comment</a></h6>
+    </div>
+
+    <br>
+  </div>
+  <br>
+  
+</div>
+    
+<br>
 
 
 {% endblock %}
