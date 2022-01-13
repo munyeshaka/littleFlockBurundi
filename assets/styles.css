@@ -7,9 +7,7 @@
     padding: 0px;
     box-sizing: border-box;
     /* font-family: 'Poppins', sans-serif; */
-    
 }
-
 
 #lok {
     font-family: 'Denk One', sans-serif;
@@ -42,7 +40,12 @@
 
 h4 a {
     text-decoration: none;
-    color: black;
+    color: #1e1e1e;
+}
+
+h6 a {
+    text-decoration: none;
+    color: #1e1e1e;
 }
 
 .dot {
